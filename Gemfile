@@ -19,7 +19,6 @@ gem 'rails', '4.2.5'
 gem 'sqlite3', :group => :development
 
 
-gem 'pg', :group => :production
 
 
 
