@@ -21,7 +21,7 @@
         <ul>
            <li>
             <% if user_signed_in?%>
-            <a href="/users/<%=current_user.id%>" data-icon="user"></a>
+            <a href="/<%=current_user.username%>" data-icon="user"></a>
             <%else%>
             <a href="/users/sign_in" data-icon="user"></a>
             <%end%>

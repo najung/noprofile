@@ -8,15 +8,18 @@
      
      
      
+
        <div id="banner" data-role="content">
          <div class="row">
            <div class="col-xs-4" align="center"><img id="before_profile" src="../bono.jpg">  
            </div>
            <div class="col-xs-2" style="padding-left:1px;" align="center">
-                <div id="count_profile">게시물<br>팔로우<br>팔로워</div>
-           </div>   
+                <div id="count_profile">게시물<br>팔로우<br>팔로워<br><% if @user == current_user %>
+                                                                      <%= link_to 'Edit Profile', edit_user_path(@user.username)%>
+                                                                      <%end%></div>
+           </div>                   
            <div class="col-xs-2" style="padding-left:1px;" align="center">
-                <div id="count_profile_answer"><%=@user_posts.count%><br>345<br>87</div>
+                <div id="count_profile_answer"><%=@user.count%><br>345<br>87</div>
            </div>
            <div class="col-xs-4" align="center"><img id="after_profile" src="../bono2.jpg"></div>
          </div>
@@ -24,19 +27,19 @@
 
            
        <div id="banner2" data-role="content">
-              <div id="id" ><%= @user.username%></div>
-              
-              <div id="introduce">안녕하세요 저는 <%= @user.username%>입니다. 
-                                   <br>제 롤모델은 <%= @user.boll_model%>입니다!
-              </div>
-              
+                                         
+              <div id="id" ><!--유저이름--><%=@users.username%></div>
+              <div id="introduce">안녕하세요 저는 <!--유저이름--><%=@users.username%>입니다. 
+                                   <br>제 롤모델은 <!--유저롤모델--><%=@users.boll_model%>입니다!
+              </div>  
+                                           
               <a href="#">&nbsp;&nbsp;facebook</a>
        </div>
            
            
            
   <div data-role="main" id="pic_box">
-       <% @user_posts.each do |p| %>
+       <% @user.each do |p| %>
     <div id='content_pic'>
     
       <!-- 클릭을하기위해 아래놈을 썻음 <img class="item thumbnail" src="<%=p.image_url%>" alt=""> -->
