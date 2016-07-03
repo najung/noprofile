@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 
-
+gem "figaro"
 gem 'jquery_mobile_rails'
 
 
